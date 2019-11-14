@@ -1,6 +1,7 @@
 ﻿using Rock;
 using Rock.Data;
 using System;
+using System.Configuration;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace TestRockInstall
     {
         static void Main(string[] args)
         {
-            var path = @"C:\files\Packages\com.securegive.rockplugin.2.3.plugin";
+            var path = Properties.Settings.Default.PackagePath;
 
             ProcessInstall(path);
 
@@ -20,7 +21,7 @@ namespace TestRockInstall
 
         static void ProcessInstall(string packagePath)
         {
-            var appRoot = @"C:\code\RockKIT\RockWeb";
+            var appRoot = Properties.Settings.Default.RockPath;
 
             try
             {
