@@ -48,7 +48,7 @@ namespace TestRockInstall
 
                             string deleteList = System.Text.Encoding.Default.GetString(deleteListEntry.Open().ReadBytesToEnd());
 
-                            string[] itemsToDelete = deleteList.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+                            string[] itemsToDelete = deleteList.Replace("\r\n", "\n").Split(new string[] { "\n" }, StringSplitOptions.None);
 
                             foreach (string deleteItem in itemsToDelete)
                             {
